@@ -5,10 +5,11 @@
  * @param {function} b
  */
 
-const solution = (X, F) => {
-  if(X===1) {
-    return F()}
-  return F()+solution(X-1,F);
+const solution = (a, b, c = b()) => {
+  if(a === 1) {
+    return c;
+  }
+  return solution(a-1, b, c && b());
 };
 
 module.exports = {
