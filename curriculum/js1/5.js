@@ -9,7 +9,7 @@ const solution = (a, b, c = b()) => {
   if(a === 1) {
     return c;
   }
-  return solution(a-1, b, c && b());
+  return c+solution(a-1, b, c);
 };
 
 module.exports = {
